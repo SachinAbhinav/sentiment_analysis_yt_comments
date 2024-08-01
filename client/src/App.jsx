@@ -2,7 +2,12 @@ import { useState } from 'react'
 import './App.css'
 import {NavBar} from './nav.jsx'
 import Axios from 'axios'
-import Result from './Result.jsx'
+import PieChart from './PieChart.jsx'
+const a = {
+  positive: 10,
+  negative: 10,
+  neutral: 10
+}
 
 function App() {
   const [formData, setFormData] = useState(() => {
@@ -30,7 +35,6 @@ function App() {
     .catch(error => {
       console.error('error:', error)
     })
-
   }
 
   return (
@@ -42,8 +46,10 @@ function App() {
       </form>
       {load ? <p>Loading...</p> : data ? 
       <>
-      <Result data={data} />
+      <PieChart d={data} />
       </> : <></>}
+      
+
     </>
   )
 }

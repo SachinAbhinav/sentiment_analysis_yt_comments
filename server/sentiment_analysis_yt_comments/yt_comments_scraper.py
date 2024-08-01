@@ -45,9 +45,10 @@ def get_youtube_comments(video_url, api_key):
     return comments
 
 # Replace with the YouTube video URL you want to scrape comments from
-# video_url = 'https://www.youtube.com/watch?v=xh9JMASX5Ic'
+video_url = 'https://www.youtube.com/watch?v=xh9JMASX5Ic'
 
-# comments = get_youtube_comments(video_url, api_key)
+comments = get_youtube_comments(video_url, api_key)
+print(len(comments))
 
 # # Print or save comments
 # for idx, comment in enumerate(comments, 1):

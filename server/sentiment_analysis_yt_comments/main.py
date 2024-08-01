@@ -14,7 +14,7 @@ def post():
         form_data = request.json
         yt_url = form_data['url']
         yt_comments = ysc.get_youtube_comments(yt_url, api_key)[:1000]
-        # print(yt_comments)
+        print('Got Comments', len(yt_comments))
         positive, negative, neutral = get_results.compute_results(yt_comments)
         print(positive, negative, neutral)
         return {
